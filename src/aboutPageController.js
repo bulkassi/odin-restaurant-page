@@ -1,3 +1,5 @@
+import RestaurantImage from "./public/restaurant_default.svg";
+
 const contentContainer = document.querySelector("#content");
 
 const createContentBox = (doc) => {
@@ -19,6 +21,17 @@ const createContent = (doc) => {
     restaurantNameBox.appendChild(restaurantName);
 
     return restaurantNameBox;
+  };
+
+  const createRestaurantSvgBox = (doc) => {
+    const restaurantSvgBox = createContentBox(doc);
+
+    const restaurantSvg = doc.createElement("img");
+    restaurantSvg.src = RestaurantImage;
+
+    restaurantSvgBox.appendChild(restaurantSvg);
+
+    return restaurantSvgBox;
   };
 
   const createDescriptionBox = (doc) => {
@@ -64,6 +77,7 @@ const createContent = (doc) => {
   };
 
   contentContainer.appendChild(createRestaurantNameBox(doc));
+  contentContainer.appendChild(createRestaurantSvgBox(doc));
   contentContainer.appendChild(createDescriptionBox(doc));
   contentContainer.appendChild(createScheduleBox(doc));
 };
