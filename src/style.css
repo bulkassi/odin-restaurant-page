@@ -1,10 +1,12 @@
 :root {
+  --primary: #c4a982;
+  --accent: #d44723;
   font-size: 24px;
   font-family: sans-serif;
 }
 
 body {
-  background-color: gold;
+  background-color: var(--primary);
   display: grid;
   grid-template-rows: [header] 100px [container] 1fr;
 
@@ -22,22 +24,21 @@ header {
   display: flex;
   justify-content: center;
   align-items: flex-end;
-}
 
-header nav {
-  display: flex;
-  flex-direction: row;
-  gap: 20px;
-}
+  nav {
+    flex-direction: row;
+    gap: 20px;
 
-header nav button {
-  background-color: white;
-  color: black;
+    button {
+      background-color: white;
+      color: black;
 
-  padding: 15px 30px;
-  border: 1px solid gray;
-  border-bottom: none;
-  border-radius: 15px 15px 0 0;
+      padding: 15px 30px;
+      border: 1px solid gray;
+      border-bottom: none;
+      border-radius: 15px 15px 0 0;
+    }
+  }
 }
 
 #content {
@@ -52,7 +53,6 @@ header nav button {
 }
 
 .content-box {
-  background: radial-gradient(ellipse closest-side, gold 20%, white);
   display: flex;
   justify-content: center;
   align-items: center;
