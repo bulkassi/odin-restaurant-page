@@ -1,15 +1,15 @@
-const contentContainer = doc.querySelector("#content");
+const contentContainer = document.querySelector("#content");
 
-const createContentBox = () => {
+const createContentBox = (doc) => {
   const box = doc.createElement("div");
   box.classList.add("content-box");
 
   return box;
 };
 
-const createContent = () => {
-  const createRestaurantNameBox = () => {
-    const restaurantNameBox = createContentBox();
+const createContent = (doc) => {
+  const createRestaurantNameBox = (doc) => {
+    const restaurantNameBox = createContentBox(doc);
 
     const restaurantName = doc.createElement("h1");
     const emphasized = doc.createElement("em");
@@ -21,8 +21,8 @@ const createContent = () => {
     return restaurantNameBox;
   };
 
-  const createDescriptionBox = () => {
-    const descriptionBox = createContentBox();
+  const createDescriptionBox = (doc) => {
+    const descriptionBox = createContentBox(doc);
     const description = doc.createElement("p");
     const descEm = doc.createElement("em");
     descEm.append("bonus");
@@ -37,8 +37,8 @@ const createContent = () => {
     return descriptionBox;
   };
 
-  const createScheduleBox = () => {
-    const scheduleBox = createContentBox();
+  const createScheduleBox = (doc) => {
+    const scheduleBox = createContentBox(doc);
     scheduleBox.classList.add("flex-column");
 
     const scheduleHeader = doc.createElement("h2");
@@ -63,14 +63,14 @@ const createContent = () => {
     return scheduleBox;
   };
 
-  contentContainer.appendChild(createRestaurantNameBox());
-  contentContainer.appendChild(createDescriptionBox());
-  contentContainer.appendChild(createScheduleBox());
+  contentContainer.appendChild(createRestaurantNameBox(doc));
+  contentContainer.appendChild(createDescriptionBox(doc));
+  contentContainer.appendChild(createScheduleBox(doc));
 };
 
-const renderAboutPage = () => {
+const renderAboutPage = (doc) => {
   contentContainer.replaceChildren();
-  createContent();
+  createContent(document);
 };
 
 export { renderAboutPage };
