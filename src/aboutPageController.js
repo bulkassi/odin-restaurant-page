@@ -12,26 +12,21 @@ const createContentBox = (doc) => {
 const createContent = (doc) => {
   const createRestaurantNameBox = (doc) => {
     const restaurantNameBox = createContentBox(doc);
+    restaurantNameBox.classList.add("flex-column");
+    restaurantNameBox.classList.add("align-center");
 
     const restaurantName = doc.createElement("h1");
     const emphasized = doc.createElement("em");
     emphasized.append("The");
     restaurantName.append(emphasized, " Snack Restaurant");
 
-    restaurantNameBox.appendChild(restaurantName);
-
-    return restaurantNameBox;
-  };
-
-  const createRestaurantSvgBox = (doc) => {
-    const restaurantSvgBox = createContentBox(doc);
-
     const restaurantSvg = doc.createElement("img");
     restaurantSvg.src = RestaurantImage;
 
-    restaurantSvgBox.appendChild(restaurantSvg);
+    restaurantNameBox.appendChild(restaurantName);
+    restaurantNameBox.appendChild(restaurantSvg);
 
-    return restaurantSvgBox;
+    return restaurantNameBox;
   };
 
   const createDescriptionBox = (doc) => {
@@ -53,6 +48,7 @@ const createContent = (doc) => {
   const createScheduleBox = (doc) => {
     const scheduleBox = createContentBox(doc);
     scheduleBox.classList.add("flex-column");
+    scheduleBox.classList.add("align-center");
 
     const scheduleHeader = doc.createElement("h2");
     scheduleHeader.append("Hours");
@@ -77,7 +73,6 @@ const createContent = (doc) => {
   };
 
   contentContainer.appendChild(createRestaurantNameBox(doc));
-  contentContainer.appendChild(createRestaurantSvgBox(doc));
   contentContainer.appendChild(createDescriptionBox(doc));
   contentContainer.appendChild(createScheduleBox(doc));
 };
