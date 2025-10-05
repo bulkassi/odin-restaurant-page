@@ -77,7 +77,7 @@ const createContent = (doc) => {
   contentContainer.appendChild(createScheduleBox(doc));
 };
 
-const renderHomePage = (doc) => {
+const renderHomePage = () => {
   contentContainer.replaceChildren();
   createContent(document);
 };
