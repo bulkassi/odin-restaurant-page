@@ -9,7 +9,11 @@
 body {
   background-color: var(--accent);
   display: grid;
-  grid-template-rows: [header] 100px [container] 1fr;
+  grid-template-columns: 1fr max(600px, 75%) 1fr;
+  grid-template-rows: 100px 1fr;
+  grid-template-areas:
+    ". header ."
+    ". content .";
 
   height: 100vh;
   padding: 0;
@@ -17,6 +21,8 @@ body {
 }
 
 header {
+  grid-area: header;
+
   display: flex;
   justify-content: center;
   align-items: flex-end;
@@ -38,6 +44,8 @@ header {
 }
 
 #content {
+  grid-area: content;
+
   display: flex;
   flex-direction: column;
   gap: 0.75rem;
