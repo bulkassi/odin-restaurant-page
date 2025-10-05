@@ -71,6 +71,26 @@ header {
   }
 }
 
+.menu-card {
+  display: flex;
+
+  &.flex-row {
+    flex-direction: row;
+  }
+
+  &.flex-column {
+    flex-direction: column;
+  }
+
+  &.justify-center {
+    justify-content: center;
+  }
+
+  &.align-center {
+    align-items: center;
+  }
+}
+
 h1,
 h2,
 p {

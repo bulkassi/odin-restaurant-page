@@ -1,5 +1,3 @@
-import RestaurantImage from "./public/restaurant_default.svg";
-
 const contentContainer = document.querySelector("#content");
 
 const createContentBox = (doc) => {
@@ -17,14 +15,10 @@ const createContent = (doc) => {
 
     const restaurantName = doc.createElement("h1");
     const emphasized = doc.createElement("em");
-    emphasized.append("The");
-    restaurantName.append(emphasized, " Snack Restaurant");
-
-    // const restaurantSvg = doc.createElement("img");
-    // restaurantSvg.src = RestaurantImage;
+    emphasized.append("Menu");
+    restaurantName.append("", emphasized);
 
     restaurantNameBox.appendChild(restaurantName);
-    // restaurantNameBox.appendChild(restaurantSvg);
 
     return restaurantNameBox;
   };
